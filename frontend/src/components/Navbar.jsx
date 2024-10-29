@@ -34,14 +34,21 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className='flex items-center gap-1.5 text-white text-xl'>
-                <IoArrowDownCircleOutline />
-                <p className='mr-10'>Install Now</p>
+            <div className='flex items-center text-white text-xl'>
+                <div className='flex items-center gap-1.5 hover:scale-105'>
+                    <IoArrowDownCircleOutline />
+                    <p className='mr-12'>Install Now</p>
+                </div>
 
-                <GoBell className='mr-7' />
+                <GoBell className='mr-7 text-gray-500 hover:text-white' />
 
-                <div className='flex justify-center items-center size-12 rounded-full bg-[#242424] mr-3'>
-                    <p className=''>HC</p>
+                <div className='relative group'>
+                    <div className='flex justify-center items-center size-12 rounded-full bg-[#242424] mr-3'>
+                        <p className=''>HC</p>
+                    </div>
+                    <div className='hidden group-hover:flex py-1 px-3 rounded-lg absolute text-white bg-[#242424] -bottom-12 right-2'>
+                        Profile
+                    </div>
                 </div>
             </div>
 

@@ -7,6 +7,7 @@ const PlayerContextProvider = (props) => {
 
     const refAudio = useRef()
     const seekBar = useRef()
+    const seekBg = useRef()
 
     const [menu, setMenu] = useState("all")
     const [track, setTrack] = useState(AllPodcastSong[0])
@@ -62,6 +63,10 @@ const PlayerContextProvider = (props) => {
         play()
     }
 
+    const seekSong = async (e) => {
+        refAudio.current.currentTime = ((e.nativeEvent.offsetX / seekBg.current.offsetWidth) * refAudio.current.duration)
+    }
+
     useEffect(() => {
         setTimeout(() => {
             refAudio.current.ontimeupdate = () => {
@@ -90,7 +95,8 @@ const PlayerContextProvider = (props) => {
         playStatus, setPlayStatus,
         nextSong, previousSong,
         time,
-        playWithId
+        playWithId,
+        seekBg, seekSong
     }
 
     return (

@@ -17,7 +17,7 @@ import { FaPauseCircle } from "react-icons/fa";
 
 const Player = () => {
 
-    const { play, pause, playStatus, nextSong, track, previousSong, time, seekBar } = useContext(PlayerContext)
+    const { play, pause, playStatus, nextSong, track, previousSong, time, seekBar, seekBg, seekSong } = useContext(PlayerContext)
 
     return (
         <div className='h-full flex justify-between items-center text-white ml-1.5 py-1.5'>
@@ -40,8 +40,12 @@ const Player = () => {
 
                 <div className='flex items-center gap-3'>
                     <p>{time.currentTime.minute}:{time.currentTime.second}</p>
-                    <div className='bg-[#242424] h-1 w-80 cursor-pointer'>
-                        <div ref={seekBar} className='h-full bg-green-500 '></div>
+                    <div
+                        ref={seekBg}
+                        className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'
+                        onClick={seekSong}
+                    >
+                        <hr ref={seekBar} className='h-1 border-none bg-green-800 rounded-full' />
                     </div>
                     <p>{time.totalTime.minute}:{time.totalTime.second}</p>
                 </div>

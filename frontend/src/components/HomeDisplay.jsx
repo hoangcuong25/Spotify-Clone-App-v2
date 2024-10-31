@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { albumsData, Songs } from "../assets/assets"
-import DisplayAlbum from './DisplayAlbum'
-import DisplaySong from './DisplaySong'
+import Album from './Album'
+import Song from './Song'
 import { PlayerContext } from '../context/Context'
 
 const HomeDisplay = () => {
@@ -39,7 +39,7 @@ const HomeDisplay = () => {
 
             <div className='flex gap-7 pl-3.5'>
                 {Songs.map((song, index) =>
-                    <DisplaySong key={index} name={song.name} image={song.image} />
+                    <Song key={index} name={song.name} image={song.image} />
                 )}
             </div>
 
@@ -49,7 +49,7 @@ const HomeDisplay = () => {
 
             <div className='flex gap-7 pl-3.5 '>
                 {albumsData.map((album, index) =>
-                    <DisplayAlbum key={index} name={album.name} image={album.image} />
+                    <Album key={index} name={album.name} image={album.image} id={album.id} />
                 )}
             </div>
         </div>

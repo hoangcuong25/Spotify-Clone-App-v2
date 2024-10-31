@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DisplaySong = ({ name, image }) => {
+const Song = ({ name, image }) => {
     return (
         <div className='min-h-48 min-w-48'>
             <img src={image} className='' alt="" />
@@ -9,4 +9,4 @@ const DisplaySong = ({ name, image }) => {
     )
 }
 
-export default DisplaySong
+export default Song

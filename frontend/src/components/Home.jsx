@@ -1,7 +1,9 @@
 import React from 'react'
 import HomeDisplay from './HomeDisplay'
-import { Route, Routes} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import DisplayAlbum from './DisplayAlbum'
+import MusicDisplay from './MusicDisplay'
+import PodcastDisplay from './PodcastDisplay'
 
 
 
@@ -11,6 +13,9 @@ const Home = () => {
             <Routes>
                 <Route path='/' element={<HomeDisplay />} />
                 <Route path='/album/:id' element={<DisplayAlbum />} />
+
+                <Route path='/music' element={<MusicDisplay />} />
+                <Route path='/podcast' element={<PodcastDisplay />} />
             </Routes>
         </div>
     )

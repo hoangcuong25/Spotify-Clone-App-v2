@@ -5,10 +5,13 @@ import { FiSearch } from "react-icons/fi";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
 import { GoBell } from "react-icons/go";
 import { PlayerContext } from '../context/Context';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const { setMenu } = useContext(PlayerContext)
+
+    const navigate = useNavigate()
 
     return (
         <div className='h-full flex items-center justify-between pt-1.5 '>
@@ -20,7 +23,9 @@ const Navbar = () => {
             >
                 <div className='relative group cursor-pointer'>
                     <div className='flex justify-center items-center rounded-full
-                    size-12 p-1.5 bg-[#242424] hover:scale-105 transition-all '>
+                    size-12 p-1.5 bg-[#242424] hover:scale-105 transition-all '
+                        onClick={() => navigate("/")}
+                    >
                         <GoHome className='text-gray-300 text-3xl' />
                     </div>
 

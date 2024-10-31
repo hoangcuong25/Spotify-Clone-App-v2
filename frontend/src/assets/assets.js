@@ -1,6 +1,10 @@
 import album1 from './album1.jpg'
 import album2 from './album2.jpg'
 import album3 from './album3.jpg'
+import podcast from './podcast-img.jpg'
+import podcast1 from './podcast1.mp3'
+import podcast2 from './podcast2.mp3'
+import podcast3 from './podcast3.mp3'
 import audio1 from './audio1.mp3'
 import audio2 from './audio2.mp3'
 import audio3 from './audio3.mp3'
@@ -85,4 +89,100 @@ export const Songs = [
         image: album3,
         audio: audio3
     },
+]
+
+export const Podcasts = [
+    {
+        id: 9,
+        name: "Đừng biến tâm bình an thành bãi rác",
+        image: podcast,
+        audio: podcast1
+    },
+    {
+        id: 10,
+        name: "Những mối tình vắt nửa mình băn khoăn ",
+        image: podcast,
+        audio: podcast2
+    },
+    {
+        id: 11,
+        name: "Chuyện về những nối tiếc",
+        image: podcast,
+        audio: podcast3
+    }
+]
+
+export const AllPodcastSong = [
+    {
+        id: 0,
+        name: "Chìm Sâu",
+        image: album1,
+        audio: audio4
+    },
+    {
+        id: 1,
+        name: "Suit & Tie",
+        image: album1,
+        audio: audio5
+    },
+    {
+        id: 2,
+        name: "Va Vào Giai Điệu Này",
+        image: album1,
+        audio: audio6
+    },
+    {
+        id: 3,
+        name: "Nếu Những Tiếc Nuối",
+        image: album2,
+        audio: audio7
+    },
+    {
+        id: 4,
+        name: "Mùa Mưa Ấy ",
+        image: album2,
+        audio: audio8
+    },
+    {
+        id: 5,
+        name: "Ngồi Chờ Trong Vấn Vương",
+        image: album2,
+        audio: audio9
+    },
+    {
+        id: 6,
+        name: "Ai Cũng Phải Bắt Đầu Từ Đâu Đó",
+        image: album3,
+        audio: audio1
+    },
+    {
+        id: 7,
+        name: "Không Phải Gu",
+        image: album3,
+        audio: audio2
+    },
+    {
+        id: 8,
+        name: "Siêu Sao",
+        image: album3,
+        audio: audio3
+    },
+    {
+        id: 9,
+        name: "Đừng biến tâm bình an thành bãi rác",
+        image: podcast,
+        audio: podcast1
+    },
+    {
+        id: 10,
+        name: "Những mối tình vắt nửa mình băn khoăn ",
+        image: podcast,
+        audio: podcast2
+    },
+    {
+        id: 11,
+        name: "Chuyện về những nối tiếc",
+        image: podcast,
+        audio: podcast3
+    }
 ]

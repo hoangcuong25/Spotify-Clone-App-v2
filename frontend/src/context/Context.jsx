@@ -1,5 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import { Songs } from '../assets/assets'
+import { AllPodcastSong } from '../assets/assets'
 
 export const PlayerContext = createContext(null);
 
@@ -9,7 +9,7 @@ const PlayerContextProvider = (props) => {
     const seekBar = useRef()
 
     const [menu, setMenu] = useState("all")
-    const [track, setTrack] = useState(Songs[0])
+    const [track, setTrack] = useState(AllPodcastSong[0])
     const [playStatus, setPlayStatus] = useState(false)
     const [time, setTime] = useState({
         currentTime: {
@@ -34,23 +34,30 @@ const PlayerContextProvider = (props) => {
 
 
     const nextSong = async () => {
-        const indexSong = Songs.indexOf(track)
-        if (indexSong < Songs.length - 1) {
-            await setTrack(Songs[indexSong + 1])
+        const indexSong = AllPodcastSong.indexOf(track)
+        if (indexSong < AllPodcastSong.length - 1) {
+            await setTrack(AllPodcastSong[indexSong + 1])
         } else {
-            await setTrack(Songs[0])
+            await setTrack(AllPodcastSong[0])
         }
 
         play()
     }
 
     const previousSong = async () => {
-        const indexSong = Songs.indexOf(track)
+        const indexSong = AllPodcastSong.indexOf(track)
         if (indexSong > 0) {
-            await setTrack(Songs[indexSong - 1])
+            await setTrack(AllPodcastSong[indexSong - 1])
         } else {
-            await setTrack(Songs[Songs.length - 1])
+            await setTrack(AllPodcastSong[AllPodcastSong.length - 1])
         }
+
+        play()
+    }
+
+    const playWithId = async (id) => {
+        const audio = AllPodcastSong.find((audio) => audio.id === id)
+        await setTrack(audio)
 
         play()
     }
@@ -82,7 +89,8 @@ const PlayerContextProvider = (props) => {
         track, setTrack,
         playStatus, setPlayStatus,
         nextSong, previousSong,
-        time
+        time,
+        playWithId
     }
 
     return (

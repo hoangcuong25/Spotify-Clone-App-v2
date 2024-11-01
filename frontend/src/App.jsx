@@ -1,30 +1,16 @@
-import React, { useContext } from 'react'
-import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
-import Home from './components/Home'
-import Player from './components/Player'
-import { PlayerContext } from './context/Context'
+import { Route, Routes } from "react-router-dom"
+import Login from "./pages/authen/Login"
+import Signup from "./pages/authen/Signup"
+import Dashboard from './pages/Dashboard'
 
 const App = () => {
-
-  const { track, refAudio } = useContext(PlayerContext)
-
   return (
-    <div className='bg-black h-screen '>
-      <div className='h-[10%]'>
-        <Navbar />
-      </div>
-
-      <div className='flex gap-2 h-[78%] pt-1.5 '>
-        <Sidebar />
-        <Home />
-      </div>
-
-      <div className='h-[12%]'>
-        <Player />
-      </div>
-
-      <audio ref={refAudio} src={track?.audio} ></audio>
+    <div>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </div>
   )
 }

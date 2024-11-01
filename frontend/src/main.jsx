@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import PlayerContextProvider from './context/Context.jsx'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <PlayerContextProvider>
         <App />
+        <ToastContainer />
       </PlayerContextProvider>
     </BrowserRouter>
   </StrictMode>,

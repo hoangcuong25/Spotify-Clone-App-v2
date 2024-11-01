@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div className='h-full w-full lg:w-[80%] lg:ml-0 ml-1.5 mr-1.5 bg-[#242424] rounded-md overflow-auto'>
             <Routes>
-                <Route path='/dashboard' element={<HomeDisplay />} />
+                <Route path='/' element={<HomeDisplay />} />
                 <Route path='/album/:id' element={<DisplayAlbum />} />
 
                 <Route path='/music' element={<MusicDisplay />} />

@@ -1,8 +1,6 @@
-import React, { useContext, useState } from 'react'
 import { albumsData, Podcasts, Songs } from "../assets/assets"
 import Album from './Album'
 import Song from './Song'
-import { PlayerContext } from '../context/Context'
 import Podcast from './Podcast'
 import HomeNavbar from './HomeNavbar'
 

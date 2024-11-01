@@ -9,6 +9,8 @@ const PlayerContextProvider = (props) => {
     const seekBar = useRef()
     const seekBg = useRef()
 
+    const url = "http://localhost:4000"
+
     const [menu, setMenu] = useState("all")
     const [track, setTrack] = useState(AllPodcastSong[0])
     const [playStatus, setPlayStatus] = useState(false)
@@ -96,7 +98,8 @@ const PlayerContextProvider = (props) => {
         nextSong, previousSong,
         time,
         playWithId,
-        seekBg, seekSong
+        seekBg, seekSong,
+        url
     }
 
     return (

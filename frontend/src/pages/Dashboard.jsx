@@ -6,7 +6,7 @@ import Home from '../components/Home'
 import Player from '../components/Player'
 
 
-const App = () => {
+const Dashboard = () => {
 
     const { track, refAudio } = useContext(PlayerContext)
 
@@ -30,4 +30,4 @@ const App = () => {
     )
 }
 
-export default App
+export default Dashboard

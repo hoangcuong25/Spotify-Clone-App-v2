@@ -6,7 +6,7 @@ const Album = ({ name, image, id }) => {
 
     const navigate = useNavigate()
 
-    return (    
+    return (
         <div
             className='h-auto max-w-48'
             onClick={() => navigate(`/album/${id}`)}

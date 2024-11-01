@@ -24,7 +24,7 @@ const Navbar = () => {
                 <div className='relative group cursor-pointer'>
                     <div className='flex justify-center items-center rounded-full
                     size-12 p-1.5 bg-[#242424] hover:scale-105 transition-all '
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/dashboard")}
                     >
                         <GoHome className='text-gray-300 text-3xl' />
                     </div>

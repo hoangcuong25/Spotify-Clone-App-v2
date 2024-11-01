@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import spotify_logo from '../../assets/spotify-logo.png'
 import logo_google from '../../assets/logo-google.png'
 import logo_fb from '../../assets/logo-fb.png'
@@ -7,8 +7,12 @@ import { useNavigate } from 'react-router-dom'
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { toast } from 'react-toastify';
+import { PlayerContext } from '../../context/Context';
+import axios from 'axios'
 
 const Login = () => {
+
+    const { url } = useContext(PlayerContext)
 
     const navigate = useNavigate()
 
@@ -21,7 +25,14 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            
+            const response = await axios.post(`${url}/api/user/login`, {
+                email: email,
+                password: password
+            })
+
+            if (response.data && response.data.success) {
+                navigate("/dashboard")
+            }
 
         } catch {
             toast.error("Something Wrong")

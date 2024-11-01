@@ -1,10 +1,15 @@
-import { albumsData, Podcasts, Songs } from "../assets/assets"
+import { albumsData, Podcasts } from "../assets/assets"
 import Album from './Album'
 import Song from './Song'
 import Podcast from './Podcast'
 import HomeNavbar from './HomeNavbar'
+import { useContext } from "react"
+import { PlayerContext } from "../context/Context"
 
 const HomeDisplay = () => {
+
+    const { song, album } = useContext(PlayerContext)
+
     return (
         <div className='h-full w-full flex flex-col'>
 
@@ -16,7 +21,7 @@ const HomeDisplay = () => {
 
             <div className='pl-3.5'>
                 <div className='flex gap-7 overflow-auto'>
-                    {Songs.map((song, index) =>
+                    {song?.map((song, index) =>
                         <Song key={index} name={song.name} image={song.image} id={song.id} />
                     )}
                 </div>
@@ -28,13 +33,13 @@ const HomeDisplay = () => {
 
             <div className='pl-3.5'>
                 <div className='flex gap-7 overflow-auto'>
-                    {albumsData.map((album, index) =>
+                    {album?.map((album, index) =>
                         <Album key={index} name={album.name} image={album.image} id={album.id} />
                     )}
                 </div>
             </div>
 
-            <div className='mb-2 pl-3.5'>
+            {/* <div className='mb-2 pl-3.5'>
                 <p className='text-xl text-white hover:underline'>Podcasts</p>
             </div>
 
@@ -44,7 +49,7 @@ const HomeDisplay = () => {
                         <Podcast key={index} name={album.name} image={album.image} id={album.id} />
                     )}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

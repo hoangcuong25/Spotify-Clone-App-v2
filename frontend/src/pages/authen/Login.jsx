@@ -43,7 +43,7 @@ const Login = () => {
         <div className='flex justify-center w-full h-[100vh] bg-[#242424] text-white'>
             <div className='flex flex-col items-center gap-2.5 h-fit w-[35%] bg-[#464646] py-3.5 rounded-lg'>
                 <img src={spotify_logo} className='h-auto w-10 ' alt="" />
-                <p>Login in to Spotify</p>
+                <p>Login In To Spotify</p>
                 <div className='flex items-center gap-2 border w-64 h-8 rounded-full'>
                     <img src={logo_google} className='size-5 ml-3' alt="" />
                     <p className=''>Login in with Google</p>

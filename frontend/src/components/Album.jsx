@@ -9,7 +9,7 @@ const Album = ({ name, image, id }) => {
     return (
         <div
             className='h-auto max-w-48'
-            onClick={() => navigate(`/album/${id}`)}
+            onClick={() => navigate(`/dashboard/album/${id}`)}
         >
             <img src={image} className='h-auto min-w-48' alt="" />
             <p className='text-white text-center'>{name}</p>

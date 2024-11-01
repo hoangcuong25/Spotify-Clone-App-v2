@@ -25,7 +25,7 @@ const Dashboard = () => {
                 <Player />
             </div>
 
-            <audio ref={refAudio} src={track?.audio} ></audio>
+            <audio ref={refAudio} src={track?.file} ></audio>
         </div>
     )
 }

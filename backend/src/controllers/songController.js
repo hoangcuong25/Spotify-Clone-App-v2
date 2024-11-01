@@ -3,7 +3,7 @@ import { v2 as cloudinary } from "cloudinary"
 
 const addSong = async (req, res) => {
     try {
-        const { name, desc, album } = req.body
+        const { name, album } = req.body
         const audioFile = req.files.audio[0]
         const imageFile = req.files.image[0]
 
@@ -14,7 +14,6 @@ const addSong = async (req, res) => {
 
         const songData = {
             name,
-            desc,
             album,
             image: imageUpload.secure_url,
             file: audioUpload.secure_url,

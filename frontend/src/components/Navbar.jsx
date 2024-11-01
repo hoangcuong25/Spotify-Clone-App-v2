@@ -56,12 +56,19 @@ const Navbar = () => {
 
                 <GoBell className='lg:flex hidden mr-7 text-gray-500 hover:text-white cursor-pointer' />
 
-                <div className='relative group cursor-pointer'>
-                    <div className='flex justify-center items-center size-12 rounded-full bg-[#242424] mr-3'>
-                        <p className=''>HC</p>
+                <div className="relative group cursor-pointer">
+                    <div className="flex justify-center items-center w-12 h-12 rounded-full bg-[#242424] mr-3">
+                        <p className="text-white font-bold">HC</p>
                     </div>
-                    <div className='hidden group-hover:flex py-1 px-3 rounded-lg absolute text-white bg-[#242424] -bottom-12 right-2'>
-                        Profile
+
+                    <div className="hidden group-hover:block py-2 px-3 rounded-lg absolute text-white bg-[#242424] right-1.5  shadow-lg">
+                        <div className="flex flex-col gap-2">
+                            <p className="hover:bg-gray-700 px-2 py-1 rounded">Account</p>
+                            <p className="hover:bg-gray-700 px-2 py-1 rounded">Profile</p>
+                            <p className="hover:bg-gray-700 px-2 py-1 rounded">Setting</p>
+                            <hr className='border-gray-700' />
+                            <p className="hover:bg-gray-700 px-2 py-1 rounded" onClick={() => navigate("/login")}>Logout</p>
+                        </div>
                     </div>
                 </div>
             </div>

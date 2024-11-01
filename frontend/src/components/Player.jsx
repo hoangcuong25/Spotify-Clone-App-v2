@@ -17,7 +17,12 @@ import { FaPauseCircle } from "react-icons/fa";
 
 const Player = () => {
 
-    const { play, pause, playStatus, nextSong, track, previousSong, time, seekBar, seekBg, seekSong } = useContext(PlayerContext)
+    const {
+        play, pause, playStatus, nextSong,
+        track, previousSong, time, seekBar,
+        seekBg, seekSong, seekVolumeBg, seekVolume,
+        seekVolumeBar,
+    } = useContext(PlayerContext)
 
     return (
         <div className='h-full flex justify-between items-center text-white ml-1.5 py-1.5'>
@@ -57,8 +62,8 @@ const Player = () => {
                 <PiPlaylistBold className='cursor-pointer' />
                 <MdOutlineDevicesOther className='text-2xl cursor-pointer' />
                 <PiSpeakerSimpleNoneBold className='cursor-pointer' />
-                <div className='bg-[#242424] h-1 w-28 cursor-pointer'>
-                    <div className='h-full w-[10%] bg-green-500 '></div>
+                <div className='bg-[#242424] h-1 w-28 cursor-pointer' ref={seekVolumeBg} onClick={seekVolume}>
+                    <hr className='h-full w-[100%] bg-green-500 ' ref={seekVolumeBar}></hr>
                 </div>
                 <AiOutlineShrink className='cursor-pointer' />
                 <MdOutlineZoomOutMap className='cursor-pointer' />

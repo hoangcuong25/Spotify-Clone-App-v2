@@ -3,11 +3,11 @@ import { PlayerContext } from '../context/Context'
 
 const Song = ({ name, image, id }) => {
 
-    const { playWithId } = useContext(PlayerContext)
+    const { playWithSongId } = useContext(PlayerContext)
 
     return (
         <div
-            onClick={() => playWithId(id)}
+            onClick={() => playWithSongId(id)}
             className='min-h-48 min-w-48'
         >
             <img src={image} className='min-h-48 min-w-48' alt="" />

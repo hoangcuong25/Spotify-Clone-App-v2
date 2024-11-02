@@ -45,29 +45,29 @@ const PlayerContextProvider = (props) => {
 
 
     const nextSong = async () => {
-        const indexSong = AllPodcastSong.indexOf(track)
-        if (indexSong < AllPodcastSong.length - 1) {
-            await setTrack(AllPodcastSong[indexSong + 1])
+        const indexSong = song.indexOf(track)
+        if (indexSong < song.length - 1) {
+            await setTrack(song[indexSong + 1])
         } else {
-            await setTrack(AllPodcastSong[0])
+            await setTrack(song[0])
         }
 
         play()
     }
 
     const previousSong = async () => {
-        const indexSong = AllPodcastSong.indexOf(track)
+        const indexSong = song.indexOf(track)
         if (indexSong > 0) {
-            await setTrack(AllPodcastSong[indexSong - 1])
+            await setTrack(song[indexSong - 1])
         } else {
-            await setTrack(AllPodcastSong[AllPodcastSong.length - 1])
+            await setTrack(song[song.length - 1])
         }
 
         play()
     }
 
-    const playWithId = async (id) => {
-        const audio = AllPodcastSong.find((audio) => audio.id === id)
+    const playWithSongId = async (id) => {
+        const audio = song.find((audio) => audio._id === id)
         await setTrack(audio)
 
         play()
@@ -149,7 +149,7 @@ const PlayerContextProvider = (props) => {
         playStatus, setPlayStatus,
         nextSong, previousSong,
         time, url,
-        playWithId,
+        playWithSongId,
         seekBg, seekSong,
         seekVolume, seekVolumeBar,
         seekVolumeBg,

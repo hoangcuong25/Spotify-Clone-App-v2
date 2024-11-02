@@ -3,7 +3,6 @@ import HomeDisplay from './HomeDisplay'
 import { Route, Routes } from 'react-router-dom'
 import DisplayAlbum from './DisplayAlbum'
 import MusicDisplay from './MusicDisplay'
-import PodcastDisplay from './PodcastDisplay'
 
 const Home = () => {
     return (
@@ -13,7 +12,6 @@ const Home = () => {
                 <Route path='/album/:id' element={<DisplayAlbum />} />
 
                 <Route path='/music' element={<MusicDisplay />} />
-                <Route path='/podcast' element={<PodcastDisplay />} />
             </Routes>
         </div>
     )

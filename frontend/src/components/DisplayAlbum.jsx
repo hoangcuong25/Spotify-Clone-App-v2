@@ -1,26 +1,28 @@
 /* eslint-disable react/jsx-key */
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { albumsData, Songs } from '../assets/assets'
 import spotify_logo_color from "../assets/spotify-logo-color.png"
 import { FaCirclePlay } from "react-icons/fa6";
 import { CiCirclePlus } from "react-icons/ci";
 import { AiOutlineEllipsis } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
 import { LuClock } from "react-icons/lu";
+import { PlayerContext } from '../context/Context';
 
 const DisplayAlbum = () => {
 
+    const { album, song, playWithSongId } = useContext(PlayerContext)
+
     const { id } = useParams()
-    const album = albumsData.find((album) => album.id === Number(id))
+    const albumData = album.find((album) => album._id === id);
 
     return (
         <div className='w-full flex flex-col text-white pt-3 pl-3.5'>
             <div className='flex gap-3'>
-                <img src={album.image} className='max-h-56' alt="" />
+                <img src={albumData.image} className='max-h-56' alt="" />
                 <div className='flex flex-col gap-1.5'>
                     <p className='text-sm'>Album</p>
-                    <p className='text-4xl'>{album.name}</p>
+                    <p className='text-4xl'>{albumData.name}</p>
                     <div className='flex items-center gap-3'>
                         <img src={spotify_logo_color} className='size-5' alt="" />
                         <p>Spotify • 50 Songs</p>
@@ -48,18 +50,21 @@ const DisplayAlbum = () => {
             </div>
             <hr className='border-gray-700 mt-1.5' />
 
-            {Songs.map((song, index) => {
-                return (
-                    <div className='grid grid-cols-3 items-center' key={index}>
-                        <div className='flex gap-3 items-center'>
-                            <p>{index + 1}</p>
-                            <img src={song.image} className=' h-20 py-3' alt="" />
-                            <p>{song.name}</p>
+            {song.map((song, index) => {
+                if (song.album === albumData.name) {
+                    return (
+                        <div className='grid grid-cols-3 items-center' key={index}>
+                            <div className='flex gap-3 items-center'>
+                                <p>{index + 1}</p>
+                                <img src={song.image} className=' h-20 py-3' alt="" onClick={() => playWithSongId(song._id)} />
+                                <p>{song.name}</p>
+                            </div>
+                            <p>{song.album}</p>
+                            <p>{song.duration}</p>
                         </div>
-                        <p>album</p>
-                        <p>3:17</p>
-                    </div>
-                )
+                    )
+                }
+                return null
             })}
         </div>
     )

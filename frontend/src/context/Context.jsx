@@ -14,7 +14,7 @@ const PlayerContextProvider = (props) => {
     const seekVolumeBar = useRef()
     const seekVolumeBg = useRef()
 
-    const url = "https://spotify-clone-app-boho.onrender.com"
+    const url = "https://spotify-clone-app-v2.onrender.com"
 
     const [menu, setMenu] = useState("all")
     const [track, setTrack] = useState()

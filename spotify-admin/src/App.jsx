@@ -9,7 +9,7 @@ import ListAlbum from './pages/ListAlbum'
 import SideBar from './components/SideBar';
 import Navbar from './components/Navbar';
 
-export const url = "https://spotify-clone-app-boho.onrender.com"
+export const url = "https://spotify-clone-app-v2.onrender.com"
 
 const App = () => {
   return (
